@@ -382,3 +382,18 @@ dd {
     padding-top: 28px;
   }
 }
+
+.hero-photo {
+  margin: 28px 0 0;
+  overflow: hidden;
+  border: 1px solid #dfe6ed;
+  border-radius: 14px;
+  background: #e9eef1;
+}
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
