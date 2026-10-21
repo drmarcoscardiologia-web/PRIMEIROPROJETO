@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Frota • Controle de viaturas</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="main.html"
+        >▣ <span>Frota<small>CONTROLE DE VIATURAS</small></span></a
+      ><span class="local">● Armazenamento neste navegador</span>
+    </header>
+    <main>
+      <div class="heading">
+        <div>
+          <p class="eyebrow">GESTÃO DE EMPRÉSTIMOS</p>
+          <h1>Sua frota, sob controle.</h1>
+          <p>Acompanhe retiradas, registre condições e organize devoluções.</p>
+        </div>
+        <button id="addVehicle">＋ Cadastrar viatura</button>
+      </div>
+      <div id="stats" class="stats"></div>
+      <nav>
+        <button class="active" data-tab="fleet">Viaturas</button
+        ><button data-tab="history">Histórico de empréstimos</button>
+      </nav>
+      <section id="fleet">
+        <div class="section-title">
+          <h2>Suas viaturas</h2>
+          <input
+            id="search"
+            placeholder="Buscar por identificação ou placa"
+            aria-label="Buscar viaturas"
+          />
+        </div>
+        <div id="vehicles" class="grid"></div>
+      </section>
+      <section id="history" hidden>
+        <div class="section-title">
+          <h2>Histórico de empréstimos</h2>
+          <button id="export" class="secondary">
+            Exportar registros (JSON)
+          </button>
+        </div>
+        <div id="records"></div>
+      </section>
+      <p class="footnote">
+        Os dados e fotos ficam apenas neste navegador. Exporte os registros para
+        manter uma cópia. Esta versão não sincroniza dispositivos e não possui
+        login.
+      </p>
+    </main>
+    <dialog id="modal">
+      <div class="dialog-top">
+        <h2 id="modalTitle"></h2>
+        <button id="close" class="icon" aria-label="Fechar">✕</button>
+      </div>
+      <div id="modalBody"></div>
+    </dialog>
+    <div id="toast" role="status"></div>
+    <script src="assets/index.js"></script>
+  </body>
+</html>
