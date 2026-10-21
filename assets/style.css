@@ -28,13 +28,14 @@ header {
   align-items: center;
   text-decoration: none;
   color: #12766a;
-  font-size: 30px;
+  font-size: clamp(18px, 3vw, 28px);
   font-weight: 800;
 }
 .brand small {
   display: block;
-  font-size: 9px;
-  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
   color: #778493;
   margin-top: 3px;
 }
@@ -353,8 +354,12 @@ dd {
   .stat span {
     font-size: 11px;
   }
+  header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
   .local {
-    max-width: 140px;
+    max-width: 100%;
     text-align: right;
     font-size: 10px;
   }

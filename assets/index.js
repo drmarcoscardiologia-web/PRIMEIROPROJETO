@@ -336,6 +336,7 @@ $("#export").onclick = () => {
 render();
 if (cloud) {
   document.querySelector("main").inert = true;
+  document.querySelector(".local").hidden = false;
   document.querySelector(".local").textContent = "Conectando à instituição…";
   rpc("loadApp")
     .then((result) => {

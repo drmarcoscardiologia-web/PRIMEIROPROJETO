@@ -77,7 +77,7 @@ function setupEnvironment_() {
 function doGet() {
   authorize_();
   return HtmlService.createHtmlOutputFromFile("Index").setTitle(
-    "Frota • Controle de viaturas",
+    "NULOG/BA - Empréstimo de Viaturas",
   );
 }
 

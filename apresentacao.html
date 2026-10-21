@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Frota • Controle de viaturas</title>
+    <title>NULOG/BA - Empréstimo de Viaturas</title>
     <style>
 :root {
   font-family:
@@ -35,13 +35,14 @@ header {
   align-items: center;
   text-decoration: none;
   color: #12766a;
-  font-size: 30px;
+  font-size: clamp(18px, 3vw, 28px);
   font-weight: 800;
 }
 .brand small {
   display: block;
-  font-size: 9px;
-  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
   color: #778493;
   margin-top: 3px;
 }
@@ -360,8 +361,12 @@ dd {
   .stat span {
     font-size: 11px;
   }
+  header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
   .local {
-    max-width: 140px;
+    max-width: 100%;
     text-align: right;
     font-size: 10px;
   }
@@ -390,8 +395,8 @@ dd {
   <body>
     <header>
       <a class="brand" href="#"
-        >▣ <span>Frota<small>CONTROLE DE VIATURAS</small></span></a
-      ><span class="local">● Armazenamento neste navegador</span>
+        >▣ <span>NULOG/BA - Empréstimo de Viaturas<small>Criado por Marcos Souza</small></span></a
+      ><span class="local" hidden aria-live="polite"></span>
     </header>
     <main>
       <div class="heading">
@@ -780,6 +785,7 @@ $("#export").onclick = () => {
 render();
 if (cloud) {
   document.querySelector("main").inert = true;
+  document.querySelector(".local").hidden = false;
   document.querySelector(".local").textContent = "Conectando à instituição…";
   rpc("loadApp")
     .then((result) => {
